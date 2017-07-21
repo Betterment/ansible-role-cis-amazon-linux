@@ -3,4 +3,4 @@ Version: 0.1
 ArtifactType: TarBall
 BuildEnvironment:
   RunOn: JenkinsAgent
-  Image: 907128454492.dkr.ecr.us-east-1.amazonaws.com/betterment-ci-images/rocketrunnerdockerimage:4b62f7768bdf72bf2c9f5db7d6d2545517b7974d
+  Image: 907128454492.dkr.ecr.us-east-1.amazonaws.com/betterment-ci-images/rocketrunnerdockerimage:e84a91ab5365ac968cdacb1fbca5b39752304b78

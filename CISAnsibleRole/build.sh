@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 mkdir -p build/{root,test}
-touch build/root/test/nop # workaround for test-free packages for now
+touch build/test/nop # workaround for test-free packages for now
 
 pkg() {
     mkdir -p "build/root/ansible/roles/cis-amazon-linux"
