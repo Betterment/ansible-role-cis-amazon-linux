@@ -10,9 +10,9 @@
     state: stopped
   with_items:
     - httpd
-    - apache
-    - apache2
-    - nginx
+    #- apache
+    #- apache2
+    #- nginx
     - lighttpd
   ignore_errors: true
   tags:
