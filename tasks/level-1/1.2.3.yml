@@ -13,13 +13,21 @@
     - "1.2.3"
     - scored
 
+# Had to make this little change to ignore SigSci
+# https://stackoverflow.com/questions/41817464/how-to-use-ansible-with-fileglob-template-to-exclude-some-files
+- name: 1.2.3 - Gather all repositories in /etc/yum.repos.d
+  set_fact:
+    repofiles: "{{ lookup('fileglob','/etc/yum.repos.d/*.repo',wantlist=true) | reject('equalto', 'sigsci.repo') |reject('equalto', 'sigsci_release.repo') | list }}"
+
 - name: 1.2.3 - Verify that gpgcheck is enabled for all repositories in /etc/yum.repos.d
   replace:
     regexp: "^gpgcheck=0"
     replace: "gpgcheck=1"
     dest: "{{ item }}"
-  with_fileglob:
-    - /etc/yum.repos.d/*.repo
+  # with_fileglob:
+  #  - /etc/yum.repos.d/*.repo
+  with_items:
+      "{{ repofiles }}"
   tags:
     - level-1
     - "1.2.3"
