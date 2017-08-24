@@ -19,6 +19,8 @@
   set_fact:
     repofiles: "{{ lookup('fileglob','/etc/yum.repos.d/*.repo', wantlist=true) | reject('equalto', '/etc/yum.repos.d/sigsci.repo') | reject('equalto', '/etc/yum.repos.d/sigsci_release.repo') | list }}"
 
+- debug: msg="repofiles = {{repofiles}}"
+
 - name: 1.2.3 - Verify that gpgcheck is enabled for all repositories in /etc/yum.repos.d
   replace:
     regexp: "^gpgcheck=0"
