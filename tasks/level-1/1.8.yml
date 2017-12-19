@@ -7,8 +7,7 @@
   yum:
     name: "*"
     state: latest
-    exclude:
-      - nginx*
+    exclude: nginx*
   tags:
     - level-1
     - "1.8"
