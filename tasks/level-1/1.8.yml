@@ -8,6 +8,7 @@
     name: "*"
     state: latest
     exclude: nginx*
+    update_cache: true
   tags:
     - level-1
     - "1.8"
