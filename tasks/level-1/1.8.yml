@@ -7,7 +7,7 @@
   yum:
     name: "*"
     state: latest
-    exclude: nginx*
+    exclude: nginx*,java*
     update_cache: true
   tags:
     - level-1
